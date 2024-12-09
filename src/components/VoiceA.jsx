@@ -2,10 +2,14 @@ import React from "react";
 import { useContext } from "react";
 import { datacontext } from "../context/UserContext";
 
-
 const VoiceA = () => {
-  // let {speak} = useContext(datacontext);
-  let { recognition, speaking, setSpeaking,recognitionText, setRecognitionText } = useContext(datacontext);
+  let {
+    recognition,
+    speaking,
+    setSpeaking,
+    recognitionText,
+    setRecognitionText,
+  } = useContext(datacontext);
   return (
     <>
       <div className="flex justify-center items-center flex-col gap-5">
@@ -21,7 +25,7 @@ const VoiceA = () => {
         {!speaking ? (
           <button
             onClick={() => {
-                setRecognitionText("Listening....")
+              setRecognitionText("Listening....");
               setSpeaking(true);
               recognition.start();
             }}
@@ -31,7 +35,9 @@ const VoiceA = () => {
           </button>
         ) : (
           <div>
-            <p className="bg-zinc-800 flex text-center p-5 m-2 rounded-md">{recognitionText}</p>
+            <p className="bg-zinc-800 flex text-center p-5 m-2 rounded-md">
+              {recognitionText}
+            </p>
           </div>
         )}
       </div>
