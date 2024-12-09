@@ -31,7 +31,7 @@ const VoiceA = () => {
             }}
             className="bg-teal-400 text-black p-3 font-semibold rounded-full"
           >
-            Click here!
+            Click here to listen!
           </button>
         ) : (
           <div>
